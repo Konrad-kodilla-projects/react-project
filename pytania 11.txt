@@ -1,0 +1,10 @@
+1. Ile średnio poziomów mają takie konstrukcje komponentowe od App.js do końca?
+
+2. Czy propsy pakuje się do najwyższego poziomu czy raczej komponenty mogą je jakoś inaczej otrzymać?
+
+3. Czy stylowanie każdego komponentu w oddzielnym pliku jest standardowym podejściem? (w tych folderach)
+    ewentualnie czy coś jeszcze się do tych folderów dopakowuje?
+
+4. Czy aplikacja napisana w react'cie odpali się na zwykłym hostingu typu home.pl czy nazwa?
+
+5. Czy warto chodzić na meetupy React/JS?
