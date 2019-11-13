@@ -9,7 +9,6 @@ const Hero = props => (
     <h2 className={styles.title}>{ReactHtmlParser(props.titleText)}</h2>
     <img
       className={styles.image}
-      // eslint-disable-next-line react/prop-types
       src={props.img}
     />
   </header>
@@ -17,6 +16,7 @@ const Hero = props => (
 
 Hero.propTypes = {
   titleText: PropTypes.node.isRequired,
+  img: PropTypes.string.isRequired,
 };
 
 export default Hero;

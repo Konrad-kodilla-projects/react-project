@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import styles from './Creator.scss';
 import Button from '../Button/Button';
@@ -7,6 +6,7 @@ import PropTypes from 'prop-types';
 class Creator extends React.Component {
   static propTypes = {
     text: PropTypes.string,
+    action: PropTypes.func,
   }
 
   static defaultProps = {
@@ -18,7 +18,7 @@ class Creator extends React.Component {
     visibleButtons: false,
   }
 
-  handleChange(event){
+  handleChange = event => {
     // console.log(event);
     this.setState({
       value: event.target.value,
@@ -26,7 +26,7 @@ class Creator extends React.Component {
     });
   }
 
-  handleOK(){
+  handleOK = () => {
     if(this.state.value != ''){
       this.props.action(this.state.value);
       this.setState({
@@ -36,7 +36,7 @@ class Creator extends React.Component {
     }
   }
 
-  handleCancel(){
+  handleCancel = () => {
     this.setState({
       value: '',
       visibleButtons: false,
@@ -50,11 +50,11 @@ class Creator extends React.Component {
           type='text'
           placeholder={this.props.text}
           value={this.state.value}
-          onChange={event => this.handleChange(event)}
+          onChange={this.handleChange.bind(event)}
         />
         <div className={styles.buttons + (this.state.visibleButtons ? ' ' + styles.buttonsShown : '')}>
-          <Button onClick={() => this.handleOK()}>OK</Button>
-          <Button onClick={() => this.handleCancel()} variant='danger'>cancel</Button>
+          <Button onClick={this.handleOK}>OK</Button>
+          <Button onClick={this.handleCancel} variant='danger'>cancel</Button>
         </div>
       </div>
     );

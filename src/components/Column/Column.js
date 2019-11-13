@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -15,6 +14,8 @@ class Column extends Component {
 
     static propTypes = {
       title: PropTypes.string.isRequired,
+      cards: PropTypes.array,
+      icon: PropTypes.string,
     };
 
     addCard(title) {
