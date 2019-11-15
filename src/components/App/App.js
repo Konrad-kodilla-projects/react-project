@@ -1,18 +1,27 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './App.scss';
-import List from '../List/List';
-import {pageContents, listData} from '../../data/dataStore';
+import List from '../List/ListContainer';
+// import { listData } from '../../data/dataStore';
+// import {pageContents, listData} from '../../data/dataStore';
 
 class App extends React.Component {
+  static propTypes = {
+    title: PropTypes.node,
+    subtitle: PropTypes.node,
+    lists: PropTypes.array,
+  }
+
   render() {
+    const { title, subtitle, lists } = this.props;
     return (
       <main className={styles.component}>
-        <h1 className={styles.title}>{pageContents.title}</h1>
-        <h2 className={styles.subtitle}>{pageContents.subtitle}</h2>
-        <List {...listData} >
-          {/* <p>I'm planning on doing all these things sooner, rather than later!</p> */}
-        </List>
+        <h1 className={styles.title}>{title}</h1>
+        <h2 className={styles.subtitle}>{subtitle}</h2>
+        {lists.map(listData => (
+          <List key={listData.id} {...listData} />
+        ))}
       </main>
     );
   }

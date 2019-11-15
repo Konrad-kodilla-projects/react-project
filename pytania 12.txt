@@ -1,0 +1,1 @@
+1. czy nazwa mapStateToProps w reduxie jest na sztywno taka czy może być dowolna?
