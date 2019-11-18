@@ -14,3 +14,25 @@
 7. Na produkcję wrzuca się już przekonwertowany kod przez builda czy to server robi sam?
 
 8. Jak istotna jest kontrola typów przez propTypes?
+
+9. Czy warto się uczyć hooksów?
+
+10. Co jest najistotniejsze w react?
+
+
+===
+Github gist
+https://reactpatterns.com/ 
+
+https://reactpatterns.com/#children-pass-through
+
+fire code - fajne czcionki do vscode
+
+W reduxie dane o znaczeniu globalnym - np komunikaty w systemie, dane z api do każdej podstrony
+
+contexty -
+
+Dan Abramov
+
+REDUX
+Jeden komponent główn
