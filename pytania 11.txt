@@ -8,3 +8,9 @@
 4. Czy aplikacja napisana w react'cie odpali się na zwykłym hostingu typu home.pl czy nazwa?
 
 5. Czy warto chodzić na meetupy React/JS?
+
+6. Czy te handlery np onClick robi się normalnie w metodach czy raczej w funkcjach anonimowych?
+
+7. Na produkcję wrzuca się już przekonwertowany kod przez builda czy to server robi sam?
+
+8. Jak istotna jest kontrola typów przez propTypes?
