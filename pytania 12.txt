@@ -1,1 +1,13 @@
 1. czy nazwa mapStateToProps w reduxie jest na sztywno taka czy może być dowolna?
+
+2. Czy jeśli kompoment nie zarządza stanem to powinien być funkcyjny?
+
+3. Z ilu kompomentów składa się taka zwykła aplikacja - bardziej 20 czy 200?
+
+4. Kiedy przerzucać stan do reduxa a kiedy używać go w kompomentach?
+
+5. na free code campie używają super(props) w constructorze, to stara składnia czy dalej się tego używa?
+
+6. W kodzie -> cardRedux.js
+
+7. Jak istotna jest kontrola typów przez propTypes?
