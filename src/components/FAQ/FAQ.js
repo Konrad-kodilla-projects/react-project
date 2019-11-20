@@ -5,15 +5,15 @@ import Hero from '../Hero/Hero';
 
 import { settings } from '../../data/dataStore';
 
-const Info = () => {
-  const {title, image, text} = settings.info;
+const FAQ = () => {
+  const {title, image, text} = settings.FAQ;
   return (
     <Container>
       <Hero titleText={title} img={image} />
-      <h2>Info</h2>
+      <h2>FAQ</h2>
       <p>{text}</p>
     </Container>
   );
 };
 
-export default Info;
+export default FAQ;

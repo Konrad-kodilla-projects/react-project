@@ -12,6 +12,19 @@ export const settings = {
   },
   defaultListDescription: '<p>I can do all the things!!!</p>',
   defaultColumnIcon: 'list-alt',
+  info: {
+    title: 'About us',
+    image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+    text: 'Następnie zrobimy trochę porządku – rozwiń i wykorzystaj obiekt settings z dataStore.js, aby z niego czerpana była nazwa ikony używanej jako logo w headerze. Następnie w dataStore.js dodaj nowe obiekty z danymi dla podstron Info oraz FAQ – mają zawierać tytuł, adres obrazka oraz treść podstrony. Nie musisz dodawać ich do stanu, wystarczy, że zaimportujesz odpowiednie obiekty z dataStore.js.',
+  },
+  FAQ: {
+    title: 'FAQ',
+    image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+    text: 'Nawigacja jest już na miejscu i działa! Dodamy do niej ostatni element, czyli podświetlenie aktywnego linka. W React Router jest to banalnie proste: daje nam on możliwość dodawania do linków nawigacji atrybutu activeClassName, czyli nazwy klasy, która zostaje dołączona do linka w przypadku, kiedy dana strona jest aktywna:',
+  },
+  header:{
+    icon: 'beer',
+  },
 };
 
 export const pageContents = {

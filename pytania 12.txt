@@ -11,3 +11,5 @@
 6. W kodzie -> cardRedux.js
 
 7. Jak istotna jest kontrola typów przez propTypes?
+
+8. Czemu teraz jak coś zmieniam i zapisuję to mi się nie odświeża?
