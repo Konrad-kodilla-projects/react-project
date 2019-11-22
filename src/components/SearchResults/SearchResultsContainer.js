@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
 import SearchResults from './SearchResults';
-import { getCardsForSearch } from '../../redux/cardRedux';
+import { getCardsForSearch, getDataForSearchCards } from '../../redux/cardRedux';
 import { createAction_changeSearchString } from '../../redux/searchStringRedux';
 
 const mapStateToProps = (state, props) => {
   const { searchString } = props.match.params;
+  const cards = getCardsForSearch(state, searchString);
 
   return {
-    cards: getCardsForSearch(state, searchString),
-    searchString,
+    cards: getDataForSearchCards(state, cards),
   };
 };
 

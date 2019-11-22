@@ -11,7 +11,6 @@ class SearchResults extends Component {
   static propTypes = {
     cards: PropTypes.array.isRequired,
     changeSearchString: PropTypes.func.isRequired,
-    searchString: PropTypes.string.isRequired,
   };
 
   componentDidMount(){
@@ -32,7 +31,7 @@ class SearchResults extends Component {
         </h3>
 
         {cards.map(cardData => (
-          <Card key={cardData.id} {...cardData} />
+          <Card key={cardData.id} {...cardData} search={true}/>
         ))}
 
       </section>

@@ -7,6 +7,19 @@ const getCardsForColumns = ({ cards }, columnId) =>
 const getCardsForSearch = ({cards}, searchString) =>
   cards.filter(card => new RegExp(searchString, 'i').test(card.title));
 
+export const getDataForSearchCards = ({columns, lists}, cards) => {
+  const columnsData = cards.map(card => ({
+    ...card,
+    column: columns.filter(column => column.id == card.columnId)[0],
+  }));
+
+  return columnsData.map(card => ({
+    ...card,
+    list: lists.filter(list => list.id === card.column.listId)[0],
+  }));
+};
+
+
 // action name creator
 const reducerName = 'cards';
 const createActionName = name => `app/${reducerName}/${name}`;
