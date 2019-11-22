@@ -1,13 +1,11 @@
 import shortid from 'shortid';
-/* 
-  Na rozmowę
-  Czy te komentarze są bo to jakaś konwencja czy to tylko tak dla
-  celów edukacyjnych?
-*/
 
 // selectors
-const getCardsForColumns = ({ cards, searchString }, columnId) =>
-  cards.filter(card => card.columnId === columnId && new RegExp(searchString, 'i').test(card.title));
+const getCardsForColumns = ({ cards }, columnId) =>
+  cards.filter(card => card.columnId === columnId);
+
+const getCardsForSearch = ({cards}, searchString) =>
+  cards.filter(card => new RegExp(searchString, 'i').test(card.title));
 
 // action name creator
 const reducerName = 'cards';
@@ -29,4 +27,4 @@ export default function reducer(state = [], action = {}) {
   }
 }
 
-export { getCardsForColumns, ADD_CARD, createAction_addCard };
+export { getCardsForColumns, getCardsForSearch, ADD_CARD, createAction_addCard };
