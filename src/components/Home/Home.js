@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { DragDropContext } from 'react-beautiful-dnd';
 
 import styles from './Home.scss';
 import ListLink from '../ListLink/ListLink';
-// import Search from '../Search/SearchContainer';
 import Container from '../Container/Container';
 
-class App extends React.Component {
+class Home extends React.Component {
   static propTypes = {
     title: PropTypes.node,
     subtitle: PropTypes.node,
@@ -15,19 +15,21 @@ class App extends React.Component {
 
   render() {
     const { title, subtitle, lists } = this.props;
+    const moveCardHandler = result => console.log(result);
     return (
       <main className={styles.component}>
         <h1 className={styles.title}>{title}</h1>
         <h2 className={styles.subtitle}>{subtitle}</h2>
         <Container>
-          {/* <Search /> */}
-          {lists.map(listData => (
-            <ListLink key={listData.id} {...listData} />
-          ))}
+          <DragDropContext onDragEnd={moveCardHandler}>
+            {lists.map(listData => (
+              <ListLink key={listData.id} {...listData} />
+            ))}
+          </DragDropContext>
         </Container>
       </main>
     );
   }
 }
 
-export default App;
+export default Home;

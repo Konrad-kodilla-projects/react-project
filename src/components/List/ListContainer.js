@@ -4,6 +4,7 @@ import {
   getColumnsForList,
   createAction_addColumn,
 } from '../../redux/columnRedux';
+import { createAction_moveCard } from '../../redux/cardRedux';
 
 const mapStateToProps = (state, props) => {
   const { id } = props.match.params;
@@ -24,6 +25,7 @@ const mapDispatchToProps = (dispatch, props) => ({
         title,
       }),
     ),
+  moveCard: payload => dispatch(createAction_moveCard(payload)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(List);

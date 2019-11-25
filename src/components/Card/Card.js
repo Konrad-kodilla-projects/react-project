@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactHtmlParser from 'react-html-parser';
 import { Link } from 'react-router-dom';
+import { Draggable } from 'react-beautiful-dnd';
 
 import styles from './Card.scss';
 
 const Card = props => {
-  const { title, search } = props;
+  const { title, search, id, index } = props;
   let desc = '';
 
   if (search) {
@@ -20,10 +21,19 @@ const Card = props => {
     );
   }
   return (
-    <div className={styles.component}>
-      <p>{title}</p>
-      {desc}
-    </div>
+    <Draggable draggableId={id} index={index}>
+      {provided => (
+        <article
+          className={styles.component}
+          {...provided.dragHandleProps}
+          {...provided.draggableProps}
+          ref={provided.innerRef}
+        >
+          <p>{title}</p>
+          {desc}
+        </article>
+      )}
+    </Draggable>
   );
 };
 
@@ -32,6 +42,8 @@ Card.propTypes = {
   column: PropTypes.object,
   list: PropTypes.object,
   search: PropTypes.bool,
+  id: PropTypes.string,
+  index: PropTypes.number,
 };
 
 export default Card;
